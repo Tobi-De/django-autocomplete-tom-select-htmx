@@ -14,7 +14,7 @@ class TomSelectField(forms.CharField):
 
     def validate(self, value):
         if not self.queryset.filter(id=value).exists():
-            raise forms.ValidationError("Choix invalide")
+            raise forms.ValidationError("Invalid choice")
 
     def widget_attrs(self, widget):
         attrs = super().widget_attrs(widget)
